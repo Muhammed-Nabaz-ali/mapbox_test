@@ -40,6 +40,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.mapbox_test.R
+import com.example.mapbox_test.navigation.Route
 import com.example.mapbox_test.presentation.screens.introduction.components.AuthButtons
 import com.example.mapbox_test.ui.theme.BackgroundColor
 
@@ -110,7 +111,9 @@ fun SignUpScreen(navController: NavController, testString: String?, testInt: Int
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = {},
+                onClick = {
+                    navController.navigate(Route.TestScreen.route)
+                },
                 shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = BackgroundColor),
                 modifier = Modifier
@@ -125,9 +128,13 @@ fun SignUpScreen(navController: NavController, testString: String?, testInt: Int
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Divider(thickness = 0.7.dp, modifier = Modifier.width(100.dp).padding(end = 5.dp))
+                Divider(thickness = 0.7.dp, modifier = Modifier
+                    .width(100.dp)
+                    .padding(end = 5.dp))
                 Text(text = "or continue with")
-                Divider(thickness = 0.7.dp, modifier = Modifier.width(100.dp).padding(start = 5.dp))
+                Divider(thickness = 0.7.dp, modifier = Modifier
+                    .width(100.dp)
+                    .padding(start = 5.dp))
 
             }
 

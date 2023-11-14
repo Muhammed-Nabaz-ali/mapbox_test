@@ -39,8 +39,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -231,6 +233,12 @@ fun TestScreen(navController: NavController) {
                                     modifier = Modifier.shadow(
                                         elevation = 7.dp,
                                         shape = RoundedCornerShape(20.dp)
+                                    ).background(
+                                        brush = Brush.verticalGradient(
+                                            colors = listOf(Color.Transparent, Color.Black.copy(alpha = 0.2f)),
+                                            startY = 0f,
+                                            endY = with(LocalDensity.current) { 10.dp.toPx() }
+                                        )
                                     ),
                                 )
                                 Icon(

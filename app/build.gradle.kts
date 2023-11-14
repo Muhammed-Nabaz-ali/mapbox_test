@@ -48,7 +48,7 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
+    implementation("androidx.core:core-ktx:1.9.0")
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -58,7 +58,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     implementation (libs.android)
-    implementation ("com.mapbox.extension:maps-compose:0.1.0")
+    implementation (libs.androidx.mapbox.extension)
     implementation("com.google.android.gms:play-services-location:18.0.0")
 
 
